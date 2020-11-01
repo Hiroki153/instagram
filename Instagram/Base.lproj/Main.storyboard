@@ -63,10 +63,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9rn-L0-Rir">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9rn-L0-Rir" userLabel="Mail Address Text Field">
                                 <rect key="frame" x="57" y="124" width="300" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="XAJ-Ei-L9u"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="XAJ-Ei-L9u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -74,7 +74,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K8J-1a-OEN">
                                 <rect key="frame" x="57" y="168" width="300" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="rIm-zk-XYt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="rIm-zk-XYt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
@@ -111,11 +111,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="K8J-1a-OEN" firstAttribute="centerX" secondItem="PnX-zZ-8TM" secondAttribute="centerX" id="7Jt-CA-ioU"/>
-                            <constraint firstItem="9rn-L0-Rir" firstAttribute="leading" secondItem="jkz-R4-jKr" secondAttribute="leading" constant="57" id="7px-bu-JJB"/>
                             <constraint firstItem="o80-eD-vON" firstAttribute="centerX" secondItem="PnX-zZ-8TM" secondAttribute="centerX" id="90s-Hv-oBf"/>
                             <constraint firstItem="dyU-PC-t08" firstAttribute="centerX" secondItem="PnX-zZ-8TM" secondAttribute="centerX" id="F2w-6C-JzU"/>
                             <constraint firstItem="5SB-fy-kpc" firstAttribute="centerX" secondItem="PnX-zZ-8TM" secondAttribute="centerX" id="Ltg-vi-76U"/>
-                            <constraint firstItem="jkz-R4-jKr" firstAttribute="trailing" secondItem="9rn-L0-Rir" secondAttribute="trailing" constant="57" id="T6u-DU-5Mt"/>
                             <constraint firstItem="5SB-fy-kpc" firstAttribute="top" secondItem="K8J-1a-OEN" secondAttribute="bottom" constant="10" id="Umm-W6-UwP"/>
                             <constraint firstItem="dyU-PC-t08" firstAttribute="top" secondItem="5SB-fy-kpc" secondAttribute="bottom" constant="10" id="Ynf-7s-pyi"/>
                             <constraint firstItem="K8J-1a-OEN" firstAttribute="top" secondItem="9rn-L0-Rir" secondAttribute="bottom" constant="10" id="on7-fn-jdC"/>
@@ -127,7 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="displayNameTextField" destination="5SB-fy-kpc" id="g2a-Kb-KDp"/>
-                        <outlet property="mailAdressTextField" destination="9rn-L0-Rir" id="Vqb-zz-LcG"/>
+                        <outlet property="mailAddressTextField" destination="9rn-L0-Rir" id="i06-yA-ziw"/>
                         <outlet property="passwordTextField" destination="K8J-1a-OEN" id="yZ2-bb-qDv"/>
                     </connections>
                 </viewController>
@@ -156,6 +154,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ict-ox-7QX" customClass="TabBarController" customModule="Instagram" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xhu-Ie-HyN">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
