@@ -7,8 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var mailAdressTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var displayNameTextField: UITextField!
+    
+    //ログインボタンをタップした時に呼ばれるメソッド
+    @IBAction func handleLoginButton(_ sender: Any) {
+    }
+    
+    //アカウント作成ボタンをタップした時に呼ばれるメソッド
+    @IBAction func handleCreateAccountButton(_ sender: Any) {
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
