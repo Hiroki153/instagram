@@ -7,6 +7,70 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Comment Input View Controller-->
+        <scene sceneID="Z0r-qS-fnt">
+            <objects>
+                <viewController storyboardIdentifier="comment" modalPresentationStyle="fullScreen" id="U09-Py-6Fs" customClass="CommentInputViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X8L-bO-1Yd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="208" translatesAutoresizingMaskIntoConstraints="NO" id="s2T-iU-KKa">
+                                <rect key="frame" x="3" y="234" width="408" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GS-Dc-TTH">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="zCD-b9-EMj"/>
+                                        </constraints>
+                                        <state key="normal" title="キャンセル" backgroundImage="btn">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="commentCancelButton:" destination="U09-Py-6Fs" eventType="touchUpInside" id="0dI-Oy-qje"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anI-rk-HGg">
+                                        <rect key="frame" x="308" y="0.0" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="cWQ-0N-3Ah"/>
+                                        </constraints>
+                                        <state key="normal" title="投稿" backgroundImage="btn">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="commentPostButton:" destination="U09-Py-6Fs" eventType="touchUpInside" id="unj-Od-P6d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUb-1S-eh5">
+                                <rect key="frame" x="57" y="94" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="EOB-Uh-eVK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="ezx-Ms-JkW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sUb-1S-eh5" firstAttribute="top" secondItem="Llp-y3-uYb" secondAttribute="top" constant="50" id="7Hr-wj-nuC"/>
+                            <constraint firstItem="s2T-iU-KKa" firstAttribute="centerX" secondItem="X8L-bO-1Yd" secondAttribute="centerX" id="9xs-8T-OvV"/>
+                            <constraint firstItem="s2T-iU-KKa" firstAttribute="top" secondItem="sUb-1S-eh5" secondAttribute="bottom" constant="40" id="EXJ-S2-z1Z"/>
+                            <constraint firstItem="sUb-1S-eh5" firstAttribute="centerX" secondItem="X8L-bO-1Yd" secondAttribute="centerX" id="tYl-qm-9pb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Llp-y3-uYb"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentField" destination="sUb-1S-eh5" id="Ovf-H3-CRP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryc-jC-lcu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1455.072463768116" y="1082.8125"/>
+        </scene>
         <!--ホーム-->
         <scene sceneID="G3v-NX-ezy">
             <objects>

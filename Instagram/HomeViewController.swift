@@ -31,6 +31,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // カスタムセルを登録する
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
+        
 
     }
     
@@ -82,12 +83,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
            // セル内のボタンのアクションをソースコードで設定する
            cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        
+           // セル内のコメントボタンのアクションをソースコードで設定する
+        cell.commentButton.addTarget(self, action:#selector(actionButton(_:forEvent:)), for: .touchUpInside)
 
 
            return cell
     }
     
-    // セル内のボタンがタップされた時に呼ばれるメソッド
+    // セル内のいいねボタンがタップされた時に呼ばれるメソッド
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: likeボタンがタップされました。")
 
@@ -116,6 +120,25 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    //セル内のコメントボタンがタップされた時に呼ばれるメソッド
+    @objc func actionButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: コメントボタンがタップされました。")
+
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+
+        //モーダル遷移する
+        let storyboard: UIStoryboard = UIStoryboard(name: "CommentInputViewController", bundle: nil)//遷移先のSotryboardを設定
+        let CommentInputViewController = storyboard.instantiateViewController(withIdentifier: "comment")
+        CommentInputViewController.postData = postData
+        self.present(CommentInputViewController, animated: true, completion: nil)//遷移する
+    }
+}
     
     
 
@@ -130,4 +153,4 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     */
 
 
-}
+
