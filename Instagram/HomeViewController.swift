@@ -131,11 +131,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         // 配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
+        let ID = postData.id
 
         //モーダル遷移する
         let storyboard: UIStoryboard = UIStoryboard(name: "CommentInputViewController", bundle: nil)//遷移先のSotryboardを設定
         let CommentInputViewController = storyboard.instantiateViewController(withIdentifier: "comment")
-        CommentInputViewController.postData = postData
+        CommentInputViewController.ID = ID
         self.present(CommentInputViewController, animated: true, completion: nil)//遷移する
     }
 }

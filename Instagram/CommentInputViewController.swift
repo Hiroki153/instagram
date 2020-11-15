@@ -14,7 +14,7 @@ class CommentInputViewController: UIViewController {
     
     @IBOutlet weak var commentField: UITextField!
     
-    let postData = PostData(document: <#T##QueryDocumentSnapshot#>)
+    let ID: String = ""
     
     //キャンセルボタンをタップした時に呼ばれるメソッド
     @IBAction func commentCancelButton(_ sender: Any) {
@@ -24,9 +24,8 @@ class CommentInputViewController: UIViewController {
     
     //投稿ボタンをタップした時に呼ばれるメソッド
     @IBAction func commentPostButton(_ sender: Any) {
-        let postData = self.postData
         // 更新されたコメントを書き込む
-        let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(ID)
         // HUDで投稿処理中の表示を開始
         SVProgressHUD.show()
         // FireStoreに投稿データを保存する
