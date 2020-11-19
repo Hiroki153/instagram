@@ -46,6 +46,16 @@ class PostTableViewCell: UITableViewCell {
             // キャプションの表示
             self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
 
+            //　コメントの表示
+            //コメントを配列に挿入
+            var commentString:String = ""
+            let newlineString:String = "\n"
+            for comment in postData.comments {
+                commentString += newlineString + comment
+                    }
+            self.commentLabel.text = commentString
+            
+
             // 日時の表示
             self.dateLabel.text = ""
             if let date = postData.date {
@@ -55,8 +65,6 @@ class PostTableViewCell: UITableViewCell {
                 self.dateLabel.text = dateString
             }
             
-            //　コメントの表示
-            self.commentLabel.text = "\(postData.commenteduser!) : \(postData.comment!)"
 
             // いいね数の表示
             let likeNumber = postData.likes.count
@@ -74,3 +82,4 @@ class PostTableViewCell: UITableViewCell {
     
     
 }
+

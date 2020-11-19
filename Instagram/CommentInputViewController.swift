@@ -14,7 +14,8 @@ class CommentInputViewController: UIViewController {
     
     @IBOutlet weak var commentField: UITextField!
     
-    let ID: String = ""
+    var id: String = ""
+    
     
     //キャンセルボタンをタップした時に呼ばれるメソッド
     @IBAction func commentCancelButton(_ sender: Any) {
@@ -24,21 +25,25 @@ class CommentInputViewController: UIViewController {
     
     //投稿ボタンをタップした時に呼ばれるメソッド
     @IBAction func commentPostButton(_ sender: Any) {
-        // 更新されたコメントを書き込む
-        let postRef = Firestore.firestore().collection(Const.PostPath).document(ID)
         // HUDで投稿処理中の表示を開始
         SVProgressHUD.show()
         // FireStoreに投稿データを保存する
         let name = Auth.auth().currentUser?.displayName
-        let postDic = [
-        "commenteduser": name!,
-        "comment": self.commentField.text!,
-        ] as [String : Any]
-        postRef.setData(postDic)
+        // 更新データを作成する
+        var updateValue: FieldValue
+        let comment = self.commentField.text!
+        // コメントを追加した場合はデータを更新する
+        updateValue = FieldValue.arrayUnion(["\(name!):\(comment)"])
+                   
+        // commentsに更新データを書き込む
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(id)
+                   postRef.updateData(["comments": updateValue])
+
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "投稿しました")
         // 投稿処理が完了したので先頭画面に戻る
         UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+        
     }
         
 

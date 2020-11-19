@@ -10,13 +10,13 @@
         <!--Comment Input View Controller-->
         <scene sceneID="Z0r-qS-fnt">
             <objects>
-                <viewController storyboardIdentifier="comment" modalPresentationStyle="fullScreen" id="U09-Py-6Fs" customClass="CommentInputViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="commentInput" modalPresentationStyle="fullScreen" id="U09-Py-6Fs" customClass="CommentInputViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X8L-bO-1Yd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="208" translatesAutoresizingMaskIntoConstraints="NO" id="s2T-iU-KKa">
-                                <rect key="frame" x="3" y="234" width="408" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="s2T-iU-KKa">
+                                <rect key="frame" x="57" y="234" width="300" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GS-Dc-TTH">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
@@ -31,7 +31,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anI-rk-HGg">
-                                        <rect key="frame" x="308" y="0.0" width="100" height="40"/>
+                                        <rect key="frame" x="200" y="0.0" width="100" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="cWQ-0N-3Ah"/>
                                         </constraints>

@@ -11,7 +11,7 @@ target 'Instagram' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
-  pod 'FirebaseUI/Storage'
+  pod 'FirebaseUI/Storage', '~> 8.0'
   pod 'SVProgressHUD','2.2.5'
   pod 'CLImageEditor/AllTools','0.2.4'
 
